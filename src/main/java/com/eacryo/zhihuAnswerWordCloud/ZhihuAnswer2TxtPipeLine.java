@@ -1,11 +1,10 @@
-package com.example.testpachong1;
+package com.eacryo.zhihuAnswerWordCloud;
 
 import lombok.Data;
 import lombok.SneakyThrows;
 import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Task;
 import us.codecraft.webmagic.pipeline.Pipeline;
-import us.codecraft.webmagic.utils.FilePersistentBase;
 
 import java.io.File;
 import java.io.FileWriter;

@@ -1,18 +1,12 @@
-package com.example.testpachong1;
+package com.eacryo.zhihuAnswerWordCloud;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.pipeline.ConsolePipeline;
-import us.codecraft.webmagic.pipeline.FilePipeline;
-import us.codecraft.webmagic.pipeline.Pipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
 import us.codecraft.webmagic.selector.JsonPathSelector;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class ZhihuPageProcessor implements PageProcessor {
@@ -57,19 +51,19 @@ public class ZhihuPageProcessor implements PageProcessor {
         return site;
     }
 
-    public static void main(String[] args) {
-
-        Spider.create(new ZhihuPageProcessor())
-                .addUrl(url)
-//                .addPipeline(new ConsolePipeline())
-//                .addPipeline(new FilePipeline("C:\\Users\\admin\\Desktop"))
-                .addPipeline(new ZhihuAnswer2TxtPipeLine("C:\\Users\\admin\\Desktop\\20220908zhihu1111.txt"))
-                .thread(5)
-                .run();
-//        Iterator<ZhihuAnswerBean> iterator = allArticleList.iterator();
-//        while (iterator.hasNext()){
-//            System.out.println(iterator.next().toString());
-//        }
-        System.out.println("共获得"+allArticleList.size()+"条回答");
-    }
+//    public static void main(String[] args) {
+//
+//        Spider.create(new ZhihuPageProcessor())
+//                .addUrl(url)
+////                .addPipeline(new ConsolePipeline())
+////                .addPipeline(new FilePipeline("C:\\Users\\admin\\Desktop"))
+//                .addPipeline(new ZhihuAnswer2TxtPipeLine("C:\\Users\\admin\\Desktop\\20220908zhihu1111.txt"))
+//                .thread(5)
+//                .run();
+////        Iterator<ZhihuAnswerBean> iterator = allArticleList.iterator();
+////        while (iterator.hasNext()){
+////            System.out.println(iterator.next().toString());
+////        }
+//        System.out.println("共获得"+allArticleList.size()+"条回答");
+//    }
 }

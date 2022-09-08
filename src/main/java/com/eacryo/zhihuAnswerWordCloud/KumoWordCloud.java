@@ -1,4 +1,4 @@
-package com.example.testpachong1;
+package com.eacryo.zhihuAnswerWordCloud;
 
 import com.kennycason.kumo.CollisionMode;
 import com.kennycason.kumo.WordCloud;
@@ -15,13 +15,13 @@ import java.io.IOException;
 import java.util.List;
 
 public class KumoWordCloud {
-    public static void main(String[] args) throws Exception {
+    public void generatePic(String txtFilePath,String picFilePath) throws Exception {
         final FrequencyAnalyzer frequencyAnalyzer = new FrequencyAnalyzer();
         frequencyAnalyzer.setWordTokenizer(new ChineseWordTokenizer());
 //        frequencyAnalyzer.setMinWordLength(2);
 //        frequencyAnalyzer.setMaxWordLength(5);
         frequencyAnalyzer.setWordFrequenciesToReturn(100);
-        final List<WordFrequency> wordFrequencies = frequencyAnalyzer.load("C:\\Users\\admin\\Desktop\\20220908zhihu1111.txt");
+        final List<WordFrequency> wordFrequencies = frequencyAnalyzer.load(txtFilePath);
         final Dimension dimension = new Dimension(600, 600);
         final WordCloud wordCloud = new WordCloud(dimension, CollisionMode.PIXEL_PERFECT);
         // 我也不知道有啥用 但是不加中文会乱码
@@ -35,6 +35,6 @@ public class KumoWordCloud {
         wordCloud.setFontScalar(new SqrtFontScalar(10, 40));
         wordCloud.build(wordFrequencies);
         System.out.println(wordFrequencies);
-        wordCloud.writeToFile("C:\\Users\\admin\\Desktop\\datarank_wordcloud_circle_sqrt_font.png");
+        wordCloud.writeToFile(picFilePath);
     }
 }

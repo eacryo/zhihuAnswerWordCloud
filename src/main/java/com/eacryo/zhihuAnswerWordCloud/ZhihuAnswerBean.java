@@ -1,4 +1,4 @@
-package com.example.testpachong1;
+package com.eacryo.zhihuAnswerWordCloud;
 
 import lombok.Data;
 
